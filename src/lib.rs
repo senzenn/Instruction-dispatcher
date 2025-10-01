@@ -1,22 +1,23 @@
-//  files
+//  lib.rs // mainland modules connector
 
-pub mod instruction;
-pub mod entrypoint;
+pub mod instruction; // 
+pub mod entrypoint; // here goes to solana 
 pub mod state;
 pub mod error;
 pub mod processor;
+pub mod utils; // helpers functions 
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+// reexport
+pub use instruction::*;
+pub use state::*;
+pub use error::*;
 
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn test_dao_init() {
+        let a = 12;
+        let b = 12;
     }
 }
