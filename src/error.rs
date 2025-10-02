@@ -1,20 +1,18 @@
 use solana_program::program_error::ProgramError;
 use thiserror::Error;
 
-#[derive(Error, Debug, Copy, Clone, PartialEq)]
+#[derive(Error, Debug, Copy, Clone)]
 pub enum CustomError {
-    #[error("Value cannot exceed 100.")]
-    MaxValueReached,
-
-    #[error("cannot decremnt value to zero ")]
-    CannotDecrementValue,
-
-    #[error("Set vlaue cannot exceed 100 ")]
-    SetValueTooHigh,
+    #[error("Max value reached")]
+    MaxValue,
+    #[error("Underflow")]
+    Underflow,
+    #[error("Invalid value")]
+    InvalidValue,
 }
 
-// converter
-
-//impl CustomError for ProgramError{
-//
-//}
+impl From<CustomError> for ProgramError {
+    fn from(e: CustomError) -> Self {
+        ProgramError::Custom(e as u32)
+    }
+}
