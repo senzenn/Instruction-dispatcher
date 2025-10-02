@@ -9,10 +9,7 @@ This program demonstrates:
 - Dispatcher pattern using match statements
 - Custom error types with proper mapping to ProgramError
 - Clear logging with `msg!` macros
-- **Instruction Dispatching** - Master the dispatcher pattern
-- **State Management** - Learn Solana account state handling
-- **Error Handling** - Understand custom program errors
-- **Program Architecture** - Build maintainable Solana programs
+
 
 ## Instructions
 
@@ -128,7 +125,5 @@ The CLI commands below show the instruction format (you'll need a client app to 
 ## State
 
 ```rust
-pub struct Counter {
-    pub value: u64,
-}
+pub let value : u64
 ```
