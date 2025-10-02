@@ -9,15 +9,15 @@ pub mod utils; // helpers functions
 
 // reexport
 pub use instruction::*;
+
 pub use state::*;
 pub use error::*;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test_dao_init() {
-        let a = 12;
-        let b = 12;
-    }
+/// test for myself  
+// create an account strcuts
+use borsh::{BorshSerialize, BorshDeserialize};
+#[derive(BorshDeserialize, BorshSerialize, Debug)]
+
+pub struct SerialAccount {
+    pub value: u64,
 }
