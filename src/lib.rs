@@ -6,3 +6,6 @@ pub mod state;
 pub mod utils;
 
 pub use {error::*, instruction::*, processor::*, state::*};
+
+#[cfg(test)]
+mod tests;
